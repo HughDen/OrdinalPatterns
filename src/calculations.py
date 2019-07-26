@@ -1,6 +1,7 @@
 from itertools import permutations
 from collections import defaultdict
 from alcoves import region_alcove_generator, address_to_ordinal_pattern
+from alcoves import BFS_weak_order_addresses
 from math import factorial
 from fractions import Fraction
 
@@ -38,6 +39,28 @@ def ordinal_distribution_uniform(n):
     
     for alcove in region_alcove_generator(n - 1, -1, 0):
         distribution[address_to_ordinal_pattern(alcove)] += 1
+    
+    return {p:distribution[p] / (2**(n-1) * factorial(n-1))
+            for p in permutations(range(1,n+1))}
+
+def ordinal_distribution_uniform_BFS(n):
+    """
+    Return the probability distribution over all permutations in S_n
+    for ordinal patterns in a random walk with steps from a Laplace
+    distribution using the breadth first search method
+    BFS_weak_order_addresses from alcoves.py.
+
+    Keyword arguments:
+    n -- Size of the permutations in the returned distribution
+
+        >>> ordinal_distribution_uniform(2)
+        {(1, 2): 0.5, (2, 1): 0.5}
+
+    """
+    distribution = {}
+    
+    for p in permutations(range(1,n+1)):
+        distribution[p] = len(BFS_weak_order_addresses(p))
     
     return {p:distribution[p] / (2**(n-1) * factorial(n-1))
             for p in permutations(range(1,n+1))}
