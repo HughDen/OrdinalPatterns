@@ -1,11 +1,8 @@
-This project contains code for a recent [paper](https://arxiv.org/abs/1907.07172) I wrote about ordinal patterns that occur in random walks. All of the notebooks are Python 3. With the exception of a few print statements, I expect most of this code works in Python 2. 
+This project contains code for a recent [paper](https://arxiv.org/abs/1907.07172) I wrote about ordinal patterns that occur in random walks. All of the notebooks are Python 3.
 
 The notebooks contained in the Calculation_notebooks folders perform some calculation related to the paper.
 
-
-[Alcoves_in_the_polytope.ipynb](https://github.com/HughDen/OrdinalPatterns/blob/master/Calculation_notebooks/Alcoves_in_the_polytope.ipynb) uses a brute force breadth-first search algorithm to generate all addresses of alcoves for the polytope defined in the paper.
-
-[Uniform_dictionary.ipynb](https://github.com/HughDen/OrdinalPatterns/blob/master/Calculation_notebooks/Uniform_dictionary.ipynb) uses a brute force method that counts alcoves to compute ordinal pattern probabilities for random walks whose steps are uniform.
+[Alcoves_in_the_polytope.ipynb](https://github.com/HughDen/OrdinalPatterns/blob/master/Calculation_notebooks/Alcoves_in_the_polytope.ipynb) uses a brute force breadth-first search algorithm to generate all addresses of alcoves for the polytope defined in the paper. This can be used to produce a count for all permutations of $\{1,\ldots,n\}$.
 
 [Almost_consecutive_totals.ipynb](https://github.com/HughDen/OrdinalPatterns/blob/master/Calculation_notebooks/Almost_consecutive_totals.ipynb) calculates the probability that a random walk with symmetric steps produces an almost consecutive permutation as an ordinal pattern.
 
